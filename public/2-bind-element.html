@@ -15,12 +15,23 @@
   <body class="container">
 
     <!-- BEGIN TEMPLATE CODE HERE -->
-    
+    <div id="bind-attribute">
+      <span :title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound title!
+      </span>
+    </div>
     <!-- END TEMPLATE CODE HERE -->
 
     <!-- BEGIN SCRIPT CODE HERE -->
     <script>
-      
+      const AttributeBinding = {
+        data() {
+          return {
+            message: 'You loaded this page on ' + new Date().toLocaleString(),
+          }
+        }
+      }
+      Vue.createApp(AttributeBinding).mount('#bind-attribute')
     </script>
     <!-- END SCRIPT CODE HERE -->
 

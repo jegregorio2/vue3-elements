@@ -15,12 +15,21 @@
   <body class="container">
 
     <!-- BEGIN TEMPLATE CODE HERE -->
-    
+    <div id="conditional-rendering">
+      <span v-if="seen">Now you see me</span>
+    </div>
     <!-- END TEMPLATE CODE HERE -->
 
     <!-- BEGIN SCRIPT CODE HERE -->
     <script>
-      
+      const ConditionalRendering = {
+        data() {
+          return {
+            seen: true,
+          }
+        }
+      }
+      Vue.createApp(ConditionalRendering).mount('#conditional-rendering')
     </script>
     <!-- END SCRIPT CODE HERE -->
 

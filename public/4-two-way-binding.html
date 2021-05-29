@@ -16,12 +16,29 @@
 
     <!-- BEGIN TEMPLATE CODE HERE -->
     
+    <div id="two-way-binding">
+      
+      <p>{{ message }}</p>
+      <input v-model="message" />
+    </div>
+    
     <!-- END TEMPLATE CODE HERE -->
 
     <!-- BEGIN SCRIPT CODE HERE -->
+    
     <script>
       
+      const TwoWayBinding = {
+        data() {
+          return {
+            message: 'Hello Vue!',
+          }
+        }
+      }
+      Vue.createApp(TwoWayBinding).mount('#two-way-binding')
+      
     </script>
+    
     <!-- END SCRIPT CODE HERE -->
 
     <script src="js/script.js"></script> 

@@ -15,12 +15,29 @@
   <body class="container">
 
     <!-- BEGIN TEMPLATE CODE HERE -->
-    
+    <div id="list-rendering">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
     <!-- END TEMPLATE CODE HERE -->
 
     <!-- BEGIN SCRIPT CODE HERE -->
     <script>
-      
+      const ListRendering = {
+        data() {
+          return {
+            todos: [
+              { text: 'Learn JavaScript' },
+              { text: 'Learn Vue' },
+              { text: 'Build something awesome' }
+            ]
+          }
+        }
+      }
+      Vue.createApp(ListRendering).mount('#list-rendering')
     </script>
     <!-- END SCRIPT CODE HERE -->
 

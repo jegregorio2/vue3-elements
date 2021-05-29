@@ -15,12 +15,30 @@
   <body class="container">
 
     <!-- BEGIN TEMPLATE CODE HERE -->
-    
+    <div id="event-handling">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
     <!-- END TEMPLATE CODE HERE -->
 
     <!-- BEGIN SCRIPT CODE HERE -->
     <script>
-      
+      const EventHandling = {
+        data() {
+          return {
+            message: 'Hello Vue.js!',
+          }
+        },
+        methods: {
+          reverseMessage() {
+            this.message = this.message
+              .split('')
+              .reverse()
+              .join('')
+          }
+        }
+      }
+      Vue.createApp(EventHandling).mount('#event-handling')
     </script>
     <!-- END SCRIPT CODE HERE -->
 

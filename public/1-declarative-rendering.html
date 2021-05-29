@@ -12,15 +12,30 @@
     <script src='https://unpkg.com/vue@next'></script>
     <link href="css/style.css" type="text/css" rel="stylesheet" />
   </head>
-  <body class="container">
+  <body class="container mt-5">
 
     <!-- BEGIN TEMPLATE CODE HERE -->
-    
+    <div id="counter">
+      Counter: {{ counter }}
+    </div>
     <!-- END TEMPLATE CODE HERE -->
 
     <!-- BEGIN SCRIPT CODE HERE -->
     <script>
-      
+    // createApp via variable
+    const Counter = {
+      data() {
+        return {
+          counter: 0,
+        }
+      },
+      mounted() {
+        setInterval(() => {
+          this.counter++
+        }, 1000)
+      }
+    }
+    Vue.createApp(Counter).mount('#counter')
     </script>
     <!-- END SCRIPT CODE HERE -->
 
